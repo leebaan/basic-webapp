@@ -1,6 +1,6 @@
-from flask import Flask
 import time
 from webapp import create_app
+
 
 def test_home_page():
     '''Function tests web application for the status code and expected output when '/' is requested'''
@@ -12,6 +12,7 @@ def test_home_page():
         assert response.status_code == 200
         assert response.get_data() == b'Hello World'
 
+
 def test_status_alive():
     '''Function tests web application for the status code and expected output when '/status/alive' is requested'''
     web_app = create_app()
@@ -20,6 +21,7 @@ def test_status_alive():
         response = test_client.get('/status/alive')
         assert response.status_code == 200
         assert response.get_data() == b''
+
 
 def test_status_ready_500():
     '''Function tests web application for the status code and expected output when '/status/ready' is requested'''
@@ -30,6 +32,7 @@ def test_status_ready_500():
         assert response.status_code == 500
         assert response.get_data() == b'{"ready":"false"}\n'
 
+
 def test_status_ready_200():
     '''Function tests web application for the status code and expected output when '/status/ready' is requested'''
     web_app = create_app()
@@ -39,6 +42,7 @@ def test_status_ready_200():
         response = test_client.get('/status/ready')
         assert response.status_code == 200
         assert response.get_data() == b'{"ready":"true"}\n'
+
 
 def test_invalid_pages():
     '''Function tests web application for invalid pages and the expected output when '/whatwhowhy' is requested'''

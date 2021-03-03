@@ -1,5 +1,6 @@
-from flask import Flask, jsonify
+from flask import Flask
 from routes import main
+
 
 def create_app():
     '''Application Factory - set up application'''

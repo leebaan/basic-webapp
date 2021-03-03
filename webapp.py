@@ -1,5 +1,5 @@
 from flask import Flask
-from .routes import main
+from routes import main
 
 
 def create_app():
@@ -11,4 +11,4 @@ def create_app():
 
 if __name__ == "__main__":
     a = create_app()
-    a.run()
+    a.run(host="0.0.0.0")

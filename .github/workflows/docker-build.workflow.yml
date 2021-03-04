@@ -17,8 +17,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.client_payload.sha }}
-      - run: echo ${{ github.event.client_payload.sha }}
-      - name: Run Buildx
         run: |
           docker buildx build \
             --platform linux/amd64 \

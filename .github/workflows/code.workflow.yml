@@ -30,3 +30,8 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - uses: azure/k8s-lint@v1
+      with:
+        manifests: |
+            k8-manifests/webapp-deployment.yml
+            k8-manifests/webapp-service.yml

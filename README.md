@@ -1,6 +1,6 @@
 ## Hello World Python-Flask
 
-This is a Python-Flask application build on Kubernetes & Docker. 
+This is a Python-Flask application built on Kubernetes & Docker. 
 
 ## Repo Structure
 

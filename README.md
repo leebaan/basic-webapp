@@ -7,5 +7,5 @@ This is a Python-Flask application build on Kubernetes & Docker.
 The main files in this repo include:
 
 - `app.py` the actual Python-Flask application
-- `k8-manifests\` contains Kubernetes manifests for the deployment & service
+- `k8-manifests` contains Kubernetes manifests for the deployment & service
 - `Dockerfile` specifies how the application is built and packaged  

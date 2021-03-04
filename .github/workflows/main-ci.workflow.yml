@@ -40,5 +40,4 @@ jobs:
       run: |
         docker buildx build \
           --platform linux/amd64 \
-          --output "type=image,push=false" \
-          --file ./Dockerfile
+          --output "type=image,push=false"

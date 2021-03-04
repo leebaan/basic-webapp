@@ -30,8 +30,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    - uses: azure/k8s-lint@v1
+    - name: validate manifests in dir1 and dir2
+      uses: makocchi-git/actions-k8s-manifests-validate-kubeval@1.0.0
       with:
-        manifests: |
-            k8-manifests/webapp-deployment.yml
-            k8-manifests/webapp-service.yml
+        files: '*/k8s-manifests/*'

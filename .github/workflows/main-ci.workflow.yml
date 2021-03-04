@@ -30,3 +30,8 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: Repository Dispatch
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.REPO_GHA_PAT }}
+        event-type: my-event

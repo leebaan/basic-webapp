@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: webapp
+  name: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - image: liban/test-webapp:latest
+        name: test-webapp
+        resources: {}
+        livenessProbe:
+          httpGet:
+            path: /status/alive
+            port: 5000
+          initialDelaySeconds: 3
+          periodSeconds: 3
+status: {}
